@@ -59,7 +59,7 @@ src/test/resources/testng.xml
 Feature: Sample API Test
 
   Background:
-    * url 'https://jsonplaceholder.typicode.com'
+  url 'https://jsonplaceholder.typicode.com'
 
   Scenario: Get list of posts
     Given path 'posts'
