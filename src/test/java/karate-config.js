@@ -1,18 +1,21 @@
 function fn() {
-  var env = karate.env; // get system property 'karate.env'
-  karate.log('karate.env system property was:', env);
-  if (!env) {
-    env = 'dev';
-  }
+  // get system property 'karate.env', default to 'dev'
+  var env = karate.env || 'dev'; 
+  karate.log('Running tests in environment:', env);
+
+  // default configuration
   var config = {
-    env: env,
-    myVarName: 'someValue'
+    baseUrl: 'https://jsonplaceholder.typicode.com', // base URL for API
+    usersPath: '/users', // common path for users
+    authToken: '' // placeholder for auth if needed in future
+  };
+
+  // environment-specific overrides
+  if (env === 'qa') {
+    config.baseUrl = 'https://jsonplaceholder.typicode.com'; // can change if QA URL differs
+  } else if (env === 'dev') {
+    config.baseUrl = 'https://jsonplaceholder.typicode.com'; // default dev URL
   }
-  if (env == 'dev') {
-    // customize
-    // e.g. config.foo = 'bar';
-  } else if (env == 'e2e') {
-    // customize
-  }
+
   return config;
 }
