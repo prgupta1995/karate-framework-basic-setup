@@ -1,12 +1,13 @@
-# Karate API Testing Framework
+## Karate API Testing Framework
 
-✅ Basic Karate framework setup using TestNG for API testing.
+# ✅ Basic Karate framework setup using TestNG for API testing.
 
-✅ Prerequisites
-* Java JDK 11 or 17
-* Maven 3.6+
+# ✅ Prerequisites
+``` Java JDK 11 or 17``` 
+``` Maven 3.6+ ```
 
-✅ Project Structure
+# ✅ Project Structure
+
 src/test/java/
 ├── com/example/tests/
 │   └── KarateTestRunner.java        # TestNG test runner
@@ -18,8 +19,7 @@ src/test/resources/
 
 pom.xml                             # Maven dependencies
 
-
-✅ TestNG Runner
+# ✅ TestNG Runner
 
 package com.example.tests;
 
@@ -42,9 +42,8 @@ public class KarateTestRunner {
     }
 }
 
-✅ TestNG Suite XML
-Location:
-src/test/resources/testng.xml
+# ✅ TestNG Suite XML
+
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Karate Test Suite">
     <test name="Karate Tests">
@@ -54,8 +53,7 @@ src/test/resources/testng.xml
     </test>
 </suite>
 
-
-✅ Sample Feature File
+#✅ Sample Feature File
 Feature: Sample API Test
 
   Background:
@@ -67,5 +65,5 @@ Feature: Sample API Test
     Then status 200
     And match response[0].id == 1
 
-🚀 Run Tests
-mvn test
+# 🚀 Run Tests
+```mvn test```
